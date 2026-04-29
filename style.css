@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+    font-family: "Poppins", serif;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
+    background-color: #FADADD; /* Fondo rosa inicial */
+    z-index: 1;
+}
+
+.container {
+    /* ... mantén tu posición absolute y centrado ... */
+    
+    min-height: 75%;    /* Cambia 'height' por 'min-height' */
+    height: auto;       /* Esto permite que el cuadro se estire hacia abajo */
+    width: 350px;
+    padding: 20px;      /* Un poco de espacio interno para que el texto no toque los bordes */
+    
+    background-color: transparent; 
+    border: 2px solid black;
+    z-index: 10;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- VIDEO DE FONDO CORREGIDO --- */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5; /* Lo ponemos por encima del fondo rosa (z-index 1) */
+    display: none; 
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que el video ocupe TODA la pantalla sin deformarse */
+}
+
+/* Esta clase se activa con tu JS al decir "Sí" */
+.mostrar-animacion {
+    display: block !important;
+}
+
+/* --- Elementos internos --- */
+.actual-image {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gif {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.text-one {
+    height: 15%;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.yes-no {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.yes, .no {
+    font-family: "Allura", serif;
+    font-size: 2rem;
+    padding: 10px 25px;
+    background-color: #FB607F;
+    border: none;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.yes:hover, .no:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        height: 80%;
+    }
+}
